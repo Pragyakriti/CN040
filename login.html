@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding:0;
+            background-image: url('https://t4.ftcdn.net/jpg/05/72/84/19/360_F_572841980_RKOXn7leguu0Cr7as9G0KvKHWYkDWMoq.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display:flex;
+            align-items: center;
+            margin-left: 250px;
+            height: 100vh;
+        }
+
+        form {
+            background-color:transparent;
+            border: 3px solid #151212ef;
+            padding: 20px;
+            border-radius:8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(214, 202, 221);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #efe4e4;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            background-color: rgb(172, 197, 205);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #e85b5b;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #f12424;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .signup-link a {
+            color: #333;
+        }
+        .error{
+            color:rgb(230,0,0);
+        }
+        #logg{
+            color:#fff;
+            text-decoration:none;
+        }
+        #sign{
+            color:black;
+        }
+        #sign:hover{
+            color:palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Login to Your Account</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"  required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" onclick="Validation()"><a id="logg" href="#">Login</a></button>
+
+        <div class="signup-link">
+            
+        <p class="error" id="error-message">
+            
+        </div>
+    </form>
+    <script>
+        function Validation(){
+            let username=document.getElementById('username').value;
+            let password=document.getElementById('password').value;
+            let logg=document.querySelector('a');
+        if ( !username || !password ) {
+            document.getElementById('error-message').innerHTML = 'All fields must be filled out';
+        } 
+        else if (username!="Pragya123") {
+            document.getElementById('error-message').innerHTML='Invalid Password or Username';
+        }
+        else if(password!="pragya@1234"){
+            document.getElementById('error-message').innerHTML='Invalid Password or Username';
+        }
+        else{
+            logg.setAttribute('href','index.html');
+        }
+        }
+    </script>
+</body>
+</html>
